@@ -12,10 +12,8 @@ const app = express();
 const db=knex({
 	client:'pg',
 	connection:{
-		host:'postgresql-reticulated-29302',
-		user:'postgres',
-		password:'root',
-		database:'smartbrain'
+		connectionString:process.env.DATABASE_URL,
+		ssl:true,
 	}
 })
 
